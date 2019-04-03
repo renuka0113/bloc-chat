@@ -22,7 +22,7 @@ class App extends Component {
         </header>
         <main>
       </main>
-     <RoomList firebase={firebase}/>
+     <RoomList firebase={firebase}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
       </div>
     );
   }
