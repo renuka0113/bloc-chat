@@ -18,11 +18,14 @@ class RoomList extends Component{
    render(){
     return(
       <section className="roomlist">
-    {
-   this.state.rooms.map( (room, key) =>
-   <tr key={room.key}/>
-    }
-  )
+      <ul>
+  {this.state.rooms.map( room =>
+                <li>
+                  { room.name }
+                </li>
+            )}
+
+  </ul>
 
       </section>
     );
