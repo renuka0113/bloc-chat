@@ -24,15 +24,13 @@ class RoomList extends Component{
     console.log(this.state.rooms);
     return(
       <section className="roomlist">
-      <ul>
-  {this.state.rooms.map( room =>
-                <li>
-                  { room.name }
-                </li>
-            )}
-
-  </ul>
-
+        <ul>
+          {this.state.rooms.map( (room,key) =>
+            <li key={room.key}>    {/*If you do not pass the key, then a warning: Each element in a child should have a unique "key" is displayed*/}
+              { room.name }
+            </li>
+          )}
+        </ul>
       </section>
     );
   }
