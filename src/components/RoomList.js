@@ -15,7 +15,7 @@ class RoomList extends Component{
     });
   }
   handleChange(e) {
-  this.setState({newRoomName: event.target.value})
+  this.setState({newRoomName: e.target.value})
   }
 
   createRoom(e){
@@ -24,7 +24,7 @@ class RoomList extends Component{
    name: newRoomName
    });
    }
-   
+
    render(){
     console.log(this.state.rooms);
     return(
