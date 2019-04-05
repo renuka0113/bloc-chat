@@ -14,6 +14,10 @@ var config = {
 
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={activeRoom:null};
+  }
   render() {
     return (
       <div className="App">
@@ -23,6 +27,7 @@ class App extends Component {
         <main>
       </main>
      <RoomList firebase={firebase}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
+     <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
       </div>
     );
   }
