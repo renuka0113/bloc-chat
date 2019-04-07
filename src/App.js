@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RoomList from './components/RoomList';
+import MessageList from './components/MessageList';
 import './App.css';
 import * as firebase from 'firebase';
 var config = {

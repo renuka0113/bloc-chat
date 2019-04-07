@@ -15,20 +15,26 @@ class RoomList extends Component{
     });
   }
   handleChange(e) {
+    e.preventDefault();
    this.setState({newRoomName: e.target.value})
  }
- 
-
 
   createRoom(e){
    e.preventDefault();
+    if (!this.state.newRoomName) { return }
    this.roomsRef.push({
    name: this.state.newRoomName
    });
+    this.setState({newRoomName:' '});
+   }
+
+   handleRoomClick(e){
+     e.preventDefault();
+     this.setState({activeRoom:e.target.value})
+     console.log(this.activeRoom);
    }
 
    render(){
-    console.log(this.state.rooms);
     return(
       <section className="roomlist">
         <ul>
@@ -38,7 +44,7 @@ class RoomList extends Component{
             </li>
           )}
         </ul>
-        <input type="text" value={ this.state.newRoomName} onChange={this.handleChange.bind(this)}/>
+        <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)} onClick={this.handleRoomClick.bind(this)}/>
         <input onClick={ (e) => this.createRoom(e) } type="button" name="submit" value="Submit"/>
       </section>
     );
