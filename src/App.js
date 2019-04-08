@@ -32,7 +32,7 @@ class App extends Component {
         </header>
         <main>
       </main>
-     <RoomList firebase={firebase} setRoom={ () => this.setRoom(room)}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
+     <RoomList firebase={firebase} setRoom={ (room) => this.setRoom(room)}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
      <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
       </div>
     );
