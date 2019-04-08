@@ -28,11 +28,7 @@ class RoomList extends Component{
     this.setState({newRoomName:' '});
    }
 
-   handleRoomClick(e){
-     e.preventDefault();
-     this.setState({activeRoom:e.target.value})
-     console.log(this.activeRoom);
-   }
+
 
    render(){
     return(
@@ -44,7 +40,7 @@ class RoomList extends Component{
             </li>
           )}
         </ul>
-        <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)} onClick={this.handleRoomClick.bind(this)}/>
+        <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)}/>
         <input onClick={ (e) => this.createRoom(e) } type="button" name="submit" value="Submit"/>
       </section>
     );
