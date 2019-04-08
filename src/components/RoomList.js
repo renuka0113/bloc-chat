@@ -37,11 +37,13 @@ class RoomList extends Component{
           {this.state.rooms.map( (room,key) =>
             <li key={room.key}>    {/*If you do not pass the key, then a warning: Each element in a child should have a unique "key" is displayed*/}
               { room.name }
+
             </li>
           )}
         </ul>
         <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)} onClick={ this.props.setRoom(room)}/>
         <input onClick={ (e) => this.createRoom(e) } type="button" name="submit" value="Submit"/>
+        <input onClick={this.state.rooms.map(room,key)=>{this.props.setRoom(room)}} type="button" name="click" value="MakeActive"/>
       </section>
     );
   }
