@@ -40,11 +40,11 @@ class RoomList extends Component{
             </li>
           )}
         </ul>
-        <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)}/>
+        <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)} onClick={ this.props.setRoom(room)}/>
         <input onClick={ (e) => this.createRoom(e) } type="button" name="submit" value="Submit"/>
       </section>
     );
   }
 }
 
-export default RoomList;
+export default RoomList

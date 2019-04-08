@@ -20,10 +20,8 @@ class App extends Component {
     this.state={activeRoom:null};
   }
 
-  handleRoomClick(e){
-    e.preventDefault();
-    this.setState({activeRoom:e.target.value})
-    console.log(this.activeRoom);
+  setRoom(room){
+   this.setState({activeRoom:room})
   }
 
   render() {
@@ -34,7 +32,7 @@ class App extends Component {
         </header>
         <main>
       </main>
-     <RoomList firebase={firebase} handleRoomClick={ () => this.handleRoomClick(e)}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
+     <RoomList firebase={firebase} setRoom={ () => this.setRoom(room)}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
      <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
       </div>
     );
