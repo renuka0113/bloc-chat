@@ -36,9 +36,9 @@ class RoomList extends Component{
         <ul>
           {this.state.rooms.map( (room,key) =>
             <li key={room.key}  onClick={() => this.props.setRoom(room)}>    {/*If you do not pass the key, then a warning: Each element in a child should have a unique "key" is displayed*/}
-
-              { room.name }
-            </li>
+            {/*Anything you put between <li> and </li> will be shown on the screen and not executed as code. Since key= is JS code, you want that to go inside of the <li> tag itself. */}
+            { room.name }
+          </li>
           )}
         </ul>
         <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)} />
