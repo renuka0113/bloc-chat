@@ -11,9 +11,7 @@ componentDidMount() {
 
      this.messagesRef.orderByChild('content').equalTo('-LbiJowSsvJTWRliYsvx').on('child_added', snapshot => {
      const message = snapshot.val();
-     console.log(message);
      message.key = snapshot.key;
-     console.log(message.key);
      this.setState({ messages: this.state.messages.concat( message ) });
  });
 }
