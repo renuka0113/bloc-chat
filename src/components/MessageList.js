@@ -12,9 +12,9 @@ componentDidMount() {
        const message = snapshot.val();
        message.key = snapshot.key;
       {/* console.log(message.roomId); */}
-     console.log(this.props.activeRoom.name);
+    if(message.roomId===this.state.activeRoom.key){
        this.setState({ messages: this.state.messages.concat( message ) });
-
+ }
  });
 }
 

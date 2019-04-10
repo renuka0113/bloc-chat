@@ -17,12 +17,12 @@ var config = {
 class App extends Component {
   constructor(props){
     super(props);
-    this.state={activeRoom:null};
+    this.state={activeRoom:{key: null}};{/*here we are setting the default value of key of activeRoom to null */}
   }
 
   setRoom(room){
    this.setState({activeRoom:room})
-{/* console.log(this.state.activeRoom);*/}
+
    }
 
   render() {
@@ -33,7 +33,7 @@ class App extends Component {
         </header>
         <main>
       </main>
-     <RoomList firebase={firebase} setRoom={ (room) => this.setRoom(room)}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
+     <RoomList firebase={firebase} setRoom={ (room) => this.setRoom(room)} activeRoom={this.state.activeRoom}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
      <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
       </div>
     );
