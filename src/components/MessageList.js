@@ -18,26 +18,25 @@ componentDidMount() {
 
 render() {
     return(
+      <section className="messagelist">
+        <ul>
             {this.state.messages.filter( (message) => {message.roomId === this.props.activeRoom.key})
-                                                  .map((message, key) => {
+                                .map(    (message, key) => {
                                                         return (
                                                            <li key={message.key}>
                                                                {message.content}
                                                            </li>
-                                                        )
-                                            })
+                                                         )
+                                                       }
+                                                     )
+                                                   }
+                   
 
-      return (
-        <section className="messagelist">
-            <ul>
-                {messages}
-            </ul>
+          </ul>
         </section>
-      )
-    
-    )
 
+    );
   }
-}{/*component close */}
+}
 
 export default MessageList
