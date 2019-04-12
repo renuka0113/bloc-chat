@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
+import User from './components/User';
 import './App.css';
 import * as firebase from 'firebase';
 var config = {
@@ -17,13 +18,16 @@ var config = {
 class App extends Component {
   constructor(props){
     super(props);
-    this.state={activeRoom:{key: null}};{/*here we are setting the default value of key of activeRoom to null */}
+    this.state={activeRoom:{key: null}, userName:null };{/*here we are setting the default value of key of activeRoom to null */}
   }
 
   setRoom(room){
    this.setState({activeRoom:room})
+  }
 
-   }
+  setUser(user){
+    this.setState({userName:user})
+  }
 
   render() {
     return (
@@ -35,6 +39,7 @@ class App extends Component {
       </main>
      <RoomList firebase={firebase} setRoom={ (room) => this.setRoom(room)} activeRoom={this.state.activeRoom}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
      <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
+     <User firebase={firebase} setUser={ (user) => this.setRoom(user)}/>
       </div>
     );
   }

@@ -33,4 +33,4 @@ render() {
   }
 }
 
-export default MessageList
+export default MessageList;
