@@ -18,7 +18,7 @@ var config = {
 class App extends Component {
   constructor(props){
     super(props);
-    this.state={activeRoom:{key: null}, userName:null };{/*here we are setting the default value of key of activeRoom to null */}
+    this.state={activeRoom:{key: null}, displayName:null };{/*here we are setting the default value of key of activeRoom to null */}
   }
 
   setRoom(room){
@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   setUser(user){
-    this.setState({userName:user})
+    this.setState({displayName:user})
   }
 
   render() {
@@ -39,7 +39,7 @@ class App extends Component {
       </main>
      <RoomList firebase={firebase} setRoom={ (room) => this.setRoom(room)} activeRoom={this.state.activeRoom}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
      <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
-     <User firebase={firebase} setUser={ (user) => this.setRoom(user)}/>
+     <User firebase={firebase} setUser={ (user) => this.setRoom(user)} displayName={this.state.displayName}/>
       </div>
     );
   }
