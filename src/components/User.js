@@ -11,7 +11,7 @@ class User extends Component{
  });
 
   }
-}
+
 
 
 signInWithPopup(e){
@@ -28,7 +28,9 @@ render(){
     <section className="user">
       <input onClick={ (e) => this.signInWithPopup(e) } type="button" name="sign-in" value="Sign-in"/>
       <input onClick={ (e) => this.signOut(e) } type="button" name="sign-out" value="Sign-Out"/>
+      {this.props.displayName}
+    </section>
     );
 }
-
+}
 export default User;
