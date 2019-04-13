@@ -26,13 +26,13 @@ class App extends Component {
   }
 
   setUser(user){
-    this.setState({displayName:user})
+    this.setState({user})
   }
 
   render() {
     const isActiveRoom=this.state.activeRoom;
     let showMessageListComponent;
-    
+
     if(isActiveRoom){
       showMessageListComponent=<MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>;
     }
@@ -46,7 +46,7 @@ class App extends Component {
      <RoomList firebase={firebase} setRoom={ (room) => this.setRoom(room)} activeRoom={this.state.activeRoom}/> {/*here we are rendering the RoomList component and passing the prop firebase to the RoomList component */}
     {/*<MessageList firebase={firebase} activeRoom={this.state.activeRoom}/> */}
       {showMessageListComponent}
-     <User firebase={firebase} setUser={ (user) => this.setRoom(user)} displayName={this.state.displayName}/>
+     <User firebase={firebase} setUser={ (user) => this.setUser(user)} user={this.state.user}/>
       </div>
     );
   }

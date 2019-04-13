@@ -28,7 +28,7 @@ render(){
     <section className="user">
       <input onClick={ (e) => this.signInWithPopup(e) } type="button" name="sign-in" value="Sign-in"/>
       <input onClick={ (e) => this.signOut(e) } type="button" name="sign-out" value="Sign-Out"/>
-      {this.props.displayName}
+      {this.props.user? this.props.user.displayName : "Guest"}
     </section>
     );
 }
