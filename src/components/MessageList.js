@@ -20,6 +20,7 @@ render() {
     return(
       <section className="messagelist">
         <ul>
+
             {this.state.messages.filter( (message) => message.roomId === this.props.activeRoom.key)
                                 .map(    (message, index) => <li key={index}>
                                                               {message.content}
