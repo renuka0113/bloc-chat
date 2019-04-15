@@ -16,6 +16,19 @@ componentDidMount() {
  });
 }
 
+handleMessage(e) {
+  e.preventDefault();
+ this.setState({newMessageName: e.target.value})
+}
+
+createMessage(e){
+ e.preventDefault();
+  this.messagesRef.push({
+ name: this.state.newMessageName
+ });
+  this.setState({newMessageName:' '});
+ }
+
 render() {
     return(
       <section className="messagelist">
@@ -28,6 +41,8 @@ render() {
                                          )
                                      }
             </ul>
+            <input type="text" value={ this.state.newMessageName||' '} onChange={this.handleMessage.bind(this)}  />
+            <input onClick={ (e) => this.createMessage(e) } type="button" name="submit" value="Send"/>
         </section>
 
     );
