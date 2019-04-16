@@ -23,7 +23,7 @@ handleMessage(e) {
 
 createMessage(e){
 this.messagesRef.push({
- name: this.state.newMessageName,
+ content: this.state.newMessageName,
  username:this.props.user,
  roomId:this.props.activeRoom.key
  });
@@ -38,7 +38,7 @@ render() {
             {this.state.messages.filter( (message) => message.roomId === this.props.activeRoom.key)
                                 .map(    (message, index) => <li key={index}>
                                                               {message.content}
-                                                            {message.username}
+                                                              {message.username}
                                                              </li>
                                          )
                                      }
