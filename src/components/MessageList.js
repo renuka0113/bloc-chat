@@ -22,8 +22,7 @@ handleMessage(e) {
 }
 
 createMessage(e){
- e.preventDefault();
-   if (!this.state.newRoomName) { return }
+
   this.messagesRef.push({
  name: this.state.newMessageName
  });
@@ -43,8 +42,8 @@ render() {
                                          )
                                      }
             </ul>
-            <input type="text" value={ this.state.newMessageName||' '} onChange={this.handleMessage.bind(this)}  />
-            <input onClick={ (e) => this.createMessage(e) } type="button" name="submit" value="Send"/>
+           <input type="text" value={ this.state.newMessageName||' '} onChange={this.handleMessage.bind(this)}  />
+            <input onClick={ (e) => this.createMessage(e) } type="button" name="send" value="Send"/>
         </section>
 
     );

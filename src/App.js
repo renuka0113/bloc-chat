@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   setUser(user){
-    this.setState({user:user}) 
+    this.setState({user:user})
       }
 
   render() {
@@ -47,7 +47,7 @@ class App extends Component {
     {/*<MessageList firebase={firebase} activeRoom={this.state.activeRoom}/> */}
       {showMessageListComponent}
      <User firebase={firebase} setUser={ (user) => this.setUser(user)} user={this.state.user}/>
-     <MessageList firebase={firebase} user={this.state.user}/>
+     <MessageList firebase={firebase} user={this.state.user} activeRoom={this.state.activeRoom}/>/>
     </div>
     );
   }
