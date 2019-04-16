@@ -4,7 +4,7 @@ import RoomList from './RoomList';
 class MessageList extends Component{
   constructor(props) {
        super(props);
-       this.state = { messages: []};
+       this.state = { messages: [], newMessageName:null};
        this.messagesRef = this.props.firebase.database().ref('messages');
 }
 componentDidMount() {
@@ -23,6 +23,7 @@ handleMessage(e) {
 
 createMessage(e){
  e.preventDefault();
+   if (!this.state.newRoomName) { return }
   this.messagesRef.push({
  name: this.state.newMessageName
  });
@@ -37,6 +38,7 @@ render() {
             {this.state.messages.filter( (message) => message.roomId === this.props.activeRoom.key)
                                 .map(    (message, index) => <li key={index}>
                                                               {message.content}
+
                                                              </li>
                                          )
                                      }
