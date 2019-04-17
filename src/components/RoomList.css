@@ -1,5 +1,12 @@
-section.roomlist{
-float:left;
-width:30%;
-background-color:#d9d9d9;
+.roomlist{
+    float:left;
+    background-color:#d9d9d9;
+  }
+
+.left{
+ width:30%;
+ }
+
+.right{
+ width:70%;
 }
