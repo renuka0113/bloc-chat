@@ -1,5 +1,6 @@
 import React ,{ Component } from 'react';
 import MessageList from './MessageList';
+import './RoomList.css';
 
 class RoomList extends Component{
   constructor(props) {
@@ -43,7 +44,7 @@ class RoomList extends Component{
           )}
         </ul>
         <input type="text" value={ this.state.newRoomName||' '} onChange={this.handleChange.bind(this)} />
-        <input onClick={ (e) => this.createRoom(e) } type="button" name="submit" value="Submit"/>
+        <input onClick={ (e) => this.createRoom(e) } type="button" name="submit" value="New Room"/>
       {/*  <input onClick={this.state.rooms.map(room,key)=><li key={room.key}{this.props.setRoom(room)} </li>} type="button" name="click" value="MakeActive"/>*/}
 
       </section>

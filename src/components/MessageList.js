@@ -23,14 +23,14 @@ handleMessage(e) {
 
 createMessage(e){
 e.preventDefault();
+console.log(this.state.newMessageName);
 this.messagesRef.push({
  content: this.state.newMessageName,
- username:this.props.user,
+ username:this.props.user && this.props.user.displayName,
  roomId:this.props.activeRoom.key
  });
   this.setState({newMessageName:' '});
-  console.log(this.state.newMessageName);
- }
+   }
 
 render() {
     return(
