@@ -10,3 +10,7 @@
 .right{
  width:70%;
 }
+
+li{
+cursor:pointer;
+}
